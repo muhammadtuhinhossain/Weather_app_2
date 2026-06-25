@@ -18,24 +18,28 @@ class SearchBarWidget extends StatelessWidget {
           Expanded(
             child: FrostedGlassCard(
               padding: EdgeInsets.symmetric(horizontal: 4, vertical: 0),
-              child: TextFormField(
-                controller: controller,
-                style: TextStyle(color: Colors.white, fontSize: 16),
-                textInputAction: TextInputAction.search,
-                onFieldSubmitted: (_) => onSearch(),
-                decoration: InputDecoration(
-                  hintText: 'Search city...',
-                  hintStyle: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.5),
-                    fontSize: 15,
+              child: SizedBox(
+                height: 40,
+                child: TextFormField(
+                  controller: controller,
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+                  textInputAction: TextInputAction.search,
+                  onFieldSubmitted: (_) => onSearch(),
+                  decoration: InputDecoration(
+                    isDense: true,
+                    hintText: 'Search city...',
+                    hintStyle: TextStyle(
+                      color: Colors.white.withValues(alpha: 0.6),
+                      fontSize: 16,
+                    ),
+                    prefixIcon: Icon(
+                      CupertinoIcons.search,
+                      color: Colors.white.withValues(alpha: 0.8),
+                      size: 20,
+                    ),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(vertical: 8),
                   ),
-                  prefixIcon: Icon(
-                    CupertinoIcons.search,
-                    color: Colors.white.withValues(alpha: 0.7),
-                    size: 20,
-                  ),
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(vertical: 12),
                 ),
               ),
             ),
@@ -46,7 +50,7 @@ class SearchBarWidget extends StatelessWidget {
             child: GestureDetector(
               onTap: onSearch,
               child: SizedBox(
-                height: 44,
+                height: 40,
                 width: 44,
                 child: Icon(CupertinoIcons.arrow_right, color: Colors.white, size: 20),
               ),
